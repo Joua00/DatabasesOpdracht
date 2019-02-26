@@ -1,0 +1,33 @@
+CREATE TABLE `Main user` (
+  `User IP` <type>,
+  `UserID` <type>,
+  `UserAdress` <type>,
+  PRIMARY KEY (`User IP`),
+  KEY `Key` (`UserID`)
+);
+
+CREATE TABLE `ToolProcessing` (
+  `QueryID` <type>,
+  `ToolresultsID` <type>,
+  `PagespeedResult` <type>,
+  `SEOResult` <type>,
+  `DeepcrawlResult` <type>,
+  PRIMARY KEY (`QueryID`),
+  KEY `FK` (`ToolresultsID`)
+);
+
+CREATE TABLE `Toolresults` (
+  `ToolresultsID` <type>,
+  `ResultCommentary` <type>,
+  `UnitOfResult` <type>,
+  PRIMARY KEY (`ToolresultsID`)
+);
+
+CREATE TABLE `Query` (
+  `QueryID` <type>,
+  `User IP` <type>,
+  `QueryDate` <type>,
+  PRIMARY KEY (`QueryID`),
+  KEY `FK` (`User IP`)
+);
+
